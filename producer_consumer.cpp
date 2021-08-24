@@ -88,7 +88,10 @@ int main()
                 // cout<<"\n";
                 cout << "Buffer : ";
                 for (int i = 0; i < 10; i++)
-                    cout << buffer[i] << " ";
+                {
+                    if(buffer[i]!=0)
+                        cout << buffer[i] << " ";
+                }
                 cout << "\n";
             }
         }

@@ -18,13 +18,28 @@ int main()
         {
         case 1:
             cout << "Enter directory name : ";
-            cin >> names[i];
-            cout << "Directory " << names[i++] << " is created\n";
+            if(i==0)
+                cin >> names[i];
+            else
+            {
+                cin>>st;
+                for(j=0;j<i;j++)
+                {
+                    if(names[j]==st)
+                    {
+                        flag=1;
+                        cout<<"Directory "<<st<<" already exists\n";
+                        break;
+                    }
+                }
+                names[i]=st;
+            }
+            if(flag==0)
+                cout << "Directory " << names[i++] << " is created\n";
             break;
         case 2:
-            cout << "Enter directory name : ";
+            cout << "Enter target directory name : ";
             cin>>st;
-            // int j;
             for(j=0;j<i;j++)
             {
                 if(names[j]==st)
@@ -45,12 +60,23 @@ int main()
                     {
                         int z=0;
                         while(mat[x][z]!="0")
+                        {
+                            if(mat[x][z]==st)
+                            {
+                                flag=1;
+                                cout<<"File "<<st<<" already exists\n";
+                                break;
+                            }
                             z++;
+                        }
                         mat[x][z]=st;
                         break;
                     }
+                    if(flag==1)
+                        break;
                 }
-                cout << "File " << st << " is created\n";
+                if(flag==0)
+                    cout << "File " << st << " is created\n";
             }
             break;
         case 3:

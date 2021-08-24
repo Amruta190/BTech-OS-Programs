@@ -44,10 +44,10 @@ void variable_bsize(int msize,int n,int p[],int n1,int block_sizes[])
     {
         cout<<"Process \tAllocation \tInternal-Fragmentation\n";
         cout<<"---------------------------------------------------------------------\n";
-        int cnt=0,inf=0;
+        int cnt=0,inf=0,x;
         for(int i=0;i<n;i++)
         {
-            int min=9999,x;
+            int min=9999;
             if(cnt>=n1)
             {
                 cout<<"Memory is full\n";
@@ -68,7 +68,7 @@ void variable_bsize(int msize,int n,int p[],int n1,int block_sizes[])
                 cout<<"\t"<<i+1<<"\t Allocated \t"<<block_sizes[x]-p[i]<<"\n";
                 inf+=block_sizes[x]-p[i];
                 cnt+=1;
-                block_sizes[x]=9999;
+                block_sizes[x]=0;
             }
         }
         cout<<"Total Internal fragmentation - "<<inf<<"\n";

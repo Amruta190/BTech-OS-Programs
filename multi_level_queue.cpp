@@ -84,7 +84,7 @@ int main()
     cout<<"Enter the queue number\n";
     for(int i=0;i<n;i++)
     {
-        cout<<"Queue number 1 or 2 of process : "<<pid[i];
+        cout<<"Queue number 1 or 2 of process-"<<pid[i]<<" : ";
         cin>>q[i];
     }
     cout<<"Enter quantum size : ";
