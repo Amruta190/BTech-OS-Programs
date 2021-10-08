@@ -25,7 +25,6 @@ bool areAllVisited()
 }
 int Philosopher()
 {
-    int flag=0;
     for(int i=0;i<n;i++)
         visited[i]=0;
     while(!areAllVisited())
@@ -39,7 +38,6 @@ int Philosopher()
                     chopstick[i]=wait(chopstick[i]);
                     chopstick[(i+1)%n]=wait(chopstick[(i+1)%n]);
                     cout<<"Philosopher "<<(i+1)%n<<" is eating\n";
-                    flag+=1;
                     visited[(i+1)%n]=1;
                 }
                 else
